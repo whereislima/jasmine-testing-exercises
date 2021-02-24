@@ -4,7 +4,6 @@ window.addEventListener('DOMContentLoaded', function() {
     setupIntialValues();
     form.addEventListener("submit", function(e) {
       e.preventDefault();
-      // getCurrentUIValues();
       update();
     });
   }
@@ -16,24 +15,13 @@ function getCurrentUIValues() {
     years: +(document.getElementById("loan-years").value),
     rate: +(document.getElementById("loan-rate").value),
   }
-
-  // console.log(document.getElementById("loan-amount").value, document.getElementById("loan-years").value, document.getElementById("loan-rate").value);
-  // const values = {
-  //   amount: +(document.getElementById("loan-amount").value),
-  //   years: +(document.getElementById("loan-years").value),
-  //   rate: +(document.getElementById("loan-rate").value),
-  // }
-  // console.log(values.amount, values.years, values.rate);
-  // calculateMonthlyPayment(values)
 }
 
 // Get the inputs from the DOM.
 // Put some default values in the inputs
 // Call a function to calculate the current monthly payment
 function setupIntialValues() {
-  // const amount = document.getElementById("loan-amount").value = 100000;
-  // const years = document.getElementById("loan-years").value = 15;
-  // const rate = document.getElementById("loan-rate").value = 2.4;
+  
   const values = {
     amount: document.getElementById("loan-amount").value = 100000,
     years: document.getElementById("loan-years").value = 15,
@@ -46,8 +34,7 @@ function setupIntialValues() {
 // Update the monthly payment
 function update() {
   let inputs = getCurrentUIValues();
-  calculateMonthlyPayment(inputs);
-  
+  calculated = calculateMonthlyPayment(inputs);
 }
 
 // Given an object of values (a value has amount, years and rate ),
@@ -59,7 +46,7 @@ function calculateMonthlyPayment(values) {
   const numOfPay = (values.years) * 12;
   const payment = (principle * interest) / (1 - Math.pow((1 + interest), -numOfPay));
   const finalPayment = payment.toFixed(2);
-  // console.log(finalPayment);
+  // append to UI
   updateMonthly(finalPayment);
 }
 
