@@ -4,6 +4,7 @@ window.addEventListener('DOMContentLoaded', function() {
     setupIntialValues();
     form.addEventListener("submit", function(e) {
       e.preventDefault();
+      // getCurrentUIValues();
       update();
     });
   }
@@ -45,8 +46,8 @@ function setupIntialValues() {
 // Update the monthly payment
 function update() {
   let inputs = getCurrentUIValues();
-  let calculated = calculateMonthlyPayment(inputs);
-  update(calculated);
+  calculateMonthlyPayment(inputs);
+  
 }
 
 // Given an object of values (a value has amount, years and rate ),
@@ -69,5 +70,3 @@ function updateMonthly(monthly) {
   monthlyPayment.innerText = `$ ${monthly}`;
 }
 
-
-// need to fix update and getcurrentuivalues;
