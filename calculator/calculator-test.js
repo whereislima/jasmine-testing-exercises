@@ -4,8 +4,8 @@ it('should calculate the monthly rate correctly', function () {
     amount: 100000,
     years:15,
     rate: 4
-  }
-  expect(calculateMonthlyPayment(values).toEqual('739.69'));
+  };
+  expect(calculateMonthlyPayment(values)).toEqual('739.69');
 
 });
 
@@ -16,7 +16,7 @@ it("should return a result with 2 decimal places", function() {
     years:1,
     rate: 4
   }
-  expect(calculateMonthlyPayment(values).toEqual('85.15')); 
+  expect(calculateMonthlyPayment(values)).toEqual('85.15'); 
 });
 
 
@@ -27,6 +27,6 @@ it("should handle high rates", function() {
     years:15,
     rate: 49
   }
-  expect(calculateMonthlyPayment(values).toEqual('4086.37'));
+  expect(calculateMonthlyPayment(values)).toEqual('4086.37');
 });
 

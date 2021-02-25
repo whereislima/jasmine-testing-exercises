@@ -27,14 +27,14 @@ function setupIntialValues() {
     years: document.getElementById("loan-years").value = 15,
     rate: document.getElementById("loan-rate").value = 4,
   }
-  calculateMonthlyPayment(values);
+  updateMonthly(calculateMonthlyPayment(values));
 }
 
 // Get the current values from the UI
 // Update the monthly payment
 function update() {
   let inputs = getCurrentUIValues();
-  calculated = calculateMonthlyPayment(inputs);
+  updateMonthly(calculateMonthlyPayment(inputs));
 }
 
 // Given an object of values (a value has amount, years and rate ),
@@ -46,8 +46,8 @@ function calculateMonthlyPayment(values) {
   const numOfPay = (values.years) * 12;
   const payment = (principle * interest) / (1 - Math.pow((1 + interest), -numOfPay));
   const finalPayment = payment.toFixed(2);
-  // append to UI
-  updateMonthly(finalPayment);
+ 
+  return finalPayment;
 }
 
 // Given a string representing the monthly payment value,

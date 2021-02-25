@@ -18,7 +18,7 @@ describe("Servers test (with setup and tear-down)", function() {
 });
 
 
-describe("", function() {
+describe("Update tip amount to all servers", function() {
   beforeEach(function () {
 
   });
