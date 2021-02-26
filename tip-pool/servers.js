@@ -28,7 +28,9 @@ function submitServerInfo(evt) {
 function updateServerTable() {
   serverTbody.innerHTML = '';
 
+  // iterating over allServers object
   for (let key in allServers) {
+    // servers name and id
     let curServer = allServers[key];
 
     let newTr = document.createElement('tr');
